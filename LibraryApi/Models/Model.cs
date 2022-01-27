@@ -38,6 +38,7 @@ namespace LibraryApi.Models
         [StringLength(20)]
         public string RoleName { get; set; }
         public ICollection<CheckOut> CheckOuts { get; set; }
+
     }
 
     public class Genre
