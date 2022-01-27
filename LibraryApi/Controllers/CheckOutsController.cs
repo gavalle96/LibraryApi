@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using LibraryApi.Models;
+using System.Web.Http.Cors;
 
 namespace LibraryApi.Controllers
 {
+    [EnableCors(origins: "https://ulibrary.azurewebsites.net", headers: "*", methods: "*")]
     public class CheckOutsController : ApiController
     {
         private MyDbContext db = new MyDbContext();
