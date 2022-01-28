@@ -13,7 +13,7 @@ using System.Web.Http.Cors;
 
 namespace LibraryApi.Controllers
 {
-    [EnableCors(origins: "https://ulibrary.azurewebsites.net", headers: "*", methods: "*")]
+    [EnableCors(origins: "https://ulibrary.azurewebsites.net,http://localhost:4200", headers: "*", methods: "*")]
     public class GenresController : ApiController
     {
         private MyDbContext db = new MyDbContext();

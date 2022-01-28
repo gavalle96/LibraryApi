@@ -14,12 +14,13 @@ using LibraryApi.Models;
 
 namespace LibraryApi.Controllers
 {
-    [EnableCors(origins: "https://ulibrary.azurewebsites.net", headers: "*", methods: "*")]
+    [EnableCors(origins: "https://ulibrary.azurewebsites.net,http://localhost:4200", headers: "*", methods: "*")]
     public class UsersController : ApiController
     {
         private MyDbContext db = new MyDbContext();
         // POST: api/Login
         [HttpPost]
+        [Route("api/Login")]
         public Reply Login([FromBody] AccessViewModel model)
         {
             Reply reply = new Reply();
