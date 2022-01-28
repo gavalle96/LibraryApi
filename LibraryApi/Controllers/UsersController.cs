@@ -33,7 +33,7 @@ namespace LibraryApi.Controllers
                     if (lst.Count() == 1)
                     {
                         reply.result = 1;
-                        reply.data = Guid.NewGuid().ToString();
+                        reply.data = new { Id = lst.FirstOrDefault().Id, Token = Guid.NewGuid().ToString() };
                     }
                     else
                     {
