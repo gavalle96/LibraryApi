@@ -19,9 +19,9 @@ namespace LibraryApi.Controllers
         private MyDbContext db = new MyDbContext();
 
         // GET: api/Books
-        public IQueryable<Book> GetBooks()
+        public IQueryable<Book> GetBooks([FromUri] string title = "", [FromUri] string author = "", [FromUri] int genreId = 0)
         {
-            return db.Books;
+            return db.Books.Where(x=> x.Title.Contains(title) && x.Author.Contains(author) && (genreId > 0 ? genreId : x.GenreId) == x.GenreId);
         }
 
         // GET: api/Books/5
